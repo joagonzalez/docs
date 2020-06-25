@@ -1,0 +1,10 @@
+site_name: Newcos Documentation Page
+theme: readthedocs
+nav:
+    - Home: index.md
+    - Arquitectura: architecture.md
+    - Infrestructura: infrastructure.md
+    - Microservicios: services.md
+    - Manual de usuario: usermanual.md
+repo_name: newcos-docs
+repo_url: https://github.com/newtech-sm/newcos-docs
