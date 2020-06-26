@@ -12,3 +12,4 @@ nav:
         - Manual de uso: usermanual.md
 repo_url: https://github.com/newtech-sm/newcos-docs
 edit_uri: blob/master/newcos/docs/
+dev_addr: 0.0.0.0:8000
