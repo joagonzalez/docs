@@ -15,9 +15,3 @@ For full documentation visit [newtech.com.ar/docs](https://www.mkdocs.org).
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
-
-# Architecture
-
-# Infrastructure
-
-# User manual
