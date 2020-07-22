@@ -1,9 +1,9 @@
 FROM python:3.7
 
-COPY ./newcos/ /newcos/
-COPY ./requirements.txt /newcos/
+COPY ./docs/ /docs/
+COPY ./requirements.txt /docs/
 
-WORKDIR /newcos/
+WORKDIR /docs/
 RUN ls
 RUN pip install -r requirements.txt
 EXPOSE 8000

@@ -8,9 +8,9 @@ services:
           - node.platform.os == linux
           - node.role == worker
     ports:
-      - "8000:8000"
-    volumes:
-      - /shared/newcos-docs:/newcos/docs
+      - "8001:8000"
+    # volumes:
+    #   - /shared/newcos-docs:/newcos/docs
     networks:
       - dmz  
 
