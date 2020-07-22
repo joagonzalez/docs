@@ -8,7 +8,7 @@ if __name__ == '__main__':
         env = sys.argv[1]
         if env in config['BUILDING']:
             result = config['BUILDING'][env]
-            print(result)
+            print(result, end='')
         else:
             loggerService.warning('env not found!')
     except Exception as e:
