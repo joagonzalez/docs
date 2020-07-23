@@ -13,6 +13,7 @@ pipeline {
                 sh 'cd utilities'
                 sh 'ls'
                 sh 'apt update --fix-missing'
+                sh 'apt install sshpass'
                 sh 'apt install ansible -y'
                 sh 'pip install pymsteams'
                 script{
