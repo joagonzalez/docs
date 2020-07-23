@@ -12,6 +12,8 @@ pipeline {
                 echo "Running build ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 sh 'cd utilities'
                 sh 'ls'
+                sh 'apt update'
+                sh 'apt install ansible'
                 sh 'pip install pymsteams'
                 script{
                     name = sh(returnStdout: true, script: 'cd utilities && python environment.py NAME')
