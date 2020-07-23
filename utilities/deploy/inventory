@@ -8,4 +8,6 @@ ansible_ssh_pass=newcosnet
 # ansible_become_user=newcos
 ansible_become_password=newcosnet
 ansible_python_interpreter=/usr/bin/python3
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+
 

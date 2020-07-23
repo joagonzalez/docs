@@ -10,10 +10,10 @@ pipeline {
         stage('Setting environment') { 
             steps {
                 echo "Running build ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                sh 'cd utilities'
+                echo "Installing building requirements..."
                 sh 'ls'
                 sh 'apt update --fix-missing'
-                sh 'apt install sshpass'
+                sh 'apt install sshpass -y'
                 sh 'apt install ansible -y'
                 sh 'pip install pymsteams'
                 script{
