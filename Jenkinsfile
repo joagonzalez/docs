@@ -91,6 +91,11 @@ pipeline {
         }
         failure {
             echo 'This will run only if failed'
+            echo 'Sending MS Teams DEVOPS channel notification...'
+            script{
+                message = "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} - More info at: ${env.BUILD_URL}"
+                sh(returnStdout: true, script: "cd utilities && python message.py '${message}'")
+            }
         }
         unstable {
             echo 'This will run only if the run was marked as unstable'
