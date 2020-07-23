@@ -5,7 +5,13 @@ def docker_registry = 'UNKNOWN'
 
 pipeline {
     // agent  any 
-    agent { docker { image 'python:3.7.5' } }
+    agent { 
+        docker { 
+            image 'python:3.7.5' 
+            registryUrl 'https://harbor-01.newtech.com.ar/'
+            registryCredentialsId '3'
+        } 
+    }
     stages {
         stage('Setting environment') { 
             steps {

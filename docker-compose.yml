@@ -1,7 +1,8 @@
 version: "3"
 services:
   mkdocs:
-    image: "${VERSION_DOCS}" #latest
+    image: "${VERSION_DOCS}"
+    # image: harbor-01.newtech.com.ar/newcos-teams/newcos-docs:1.0.2-dev
     deploy: 
       placement: 
         constraints: 
