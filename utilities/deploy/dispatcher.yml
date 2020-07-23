@@ -13,7 +13,7 @@
         state: directory
 
     - set_fact:
-        VERSION: "{{ lookup('env','VERSION_DOCS') }}"
+        VERSION: "{{ lookup('env','DEPLOY_IMAGE') }}"
 
     - debug: 
         msg: "{{ VERSION }} is an environment variable"
