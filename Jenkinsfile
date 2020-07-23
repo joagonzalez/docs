@@ -19,10 +19,10 @@ pipeline {
                 echo "Running build ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 echo "Installing building requirements..."
                 sh 'ls'
-                sh 'apt update --fix-missing'
-                sh 'apt install sshpass -y'
-                sh 'apt install ansible -y'
-                sh 'pip install pymsteams'
+                // sh 'apt update --fix-missing'
+                // sh 'apt install sshpass -y'
+                // sh 'apt install ansible -y'
+                // sh 'pip install pymsteams'
                 script{
                     name = sh(returnStdout: true, script: 'cd utilities && python environment.py NAME')
                     version = sh(returnStdout: true, script: 'cd utilities && python environment.py VERSION')
