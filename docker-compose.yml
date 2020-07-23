@@ -1,7 +1,7 @@
 version: "3"
 services:
   mkdocs:
-    image: harbor-01.newtech.com.ar/newcos-automation/newcos-docs:${VERSION_DOCS} #latest
+    image: "harbor-01.newtech.com.ar/newcos-automation/newcos-docs:${VERSION_DOCS}" #latest
     deploy: 
       placement: 
         constraints: 
