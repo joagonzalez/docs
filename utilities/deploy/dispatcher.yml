@@ -1,0 +1,47 @@
+- name: Deploy on Swarm Cluster
+  hosts: managers
+  gather_facts: True
+  tasks:
+    - name: path var
+      set_fact: 
+        path: /shared/newcos-cicd/deploy
+      delegate_to: localhost
+
+    - name: Create a directory
+      file:
+        path: "{{path}}"
+        state: directory
+
+    - set_fact:
+        VERSION: "{{ lookup('env','VERSION_DOCS') }}"
+
+    - debug: 
+        msg: "{{ VERSION }} is an environment variable"
+
+    - name: Copy docker-compose.yml to master
+      copy:
+        src: ../../docker-compose.yml
+        dest: /shared/newcos-cicd/deploy
+
+    - name: Deploy on Swarm
+      shell: "cd {{path}} && docker stack deploy -c docker-compose.yml newcos-docs-automation"
+      register: stack_deploy
+      environment:
+        VERSION_DOCS: "{{ VERSION }}"
+
+    - debug: var={{item}}
+      with_items: stack_deploy.stdout_lines
+
+    - name: Check list of services
+      command: docker service ls
+      register: service_list
+
+    - debug: var={{item}}
+      with_items: service_list.stdout_lines
+
+    - name: Check list of stack
+      command: docker stack ps newcos-docs-automation
+      register: stack_ps
+
+    - debug: var={{item}}
+      with_items: stack_ps.stdout_lines

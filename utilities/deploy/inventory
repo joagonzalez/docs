@@ -1,0 +1,11 @@
+[managers]
+newcos-manager-01.smq.net 
+
+[all:vars]
+ansible_connection=ssh
+ansible_user=newcos
+ansible_ssh_pass=newcosnet
+# ansible_become_user=newcos
+ansible_become_password=newcosnet
+ansible_python_interpreter=/usr/bin/python3
+
