@@ -62,7 +62,7 @@ pipeline {
             steps {
                 echo 'Deploy service within docker swarm dev cluster...'
                 // setting env var docker compose
-                sh 'export VERSION_DOCS=${version} && cd utilities/deploy && ansible-playbook -i inventory dispatcher.yml'
+                sh "export VERSION_DOCS=${version} && cd utilities/deploy && ansible-playbook -i inventory dispatcher.yml"
             }
         }
         stage('Mail notification') { 
