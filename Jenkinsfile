@@ -7,7 +7,8 @@ pipeline {
     // agent  any 
     agent { 
         docker { 
-            image 'python:3.7.5' 
+            //image 'python:3.7.5' 
+            image 'harbor-01.newtech.com.ar/newcos-automation/newcos-jenkins-agent:1.0.0'
             registryUrl 'https://harbor-01.newtech.com.ar/'
             registryCredentialsId '3'
         } 
