@@ -18,7 +18,7 @@
     - debug: 
         msg: "{{ VERSION }} is an environment variable"
 
-    - name: Copy docker-compose.yml to master
+    - name: Copy docker-compose.yml to manager
       copy:
         src: ../../docker-compose.yml
         dest: /shared/newcos-cicd/deploy
