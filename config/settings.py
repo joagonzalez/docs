@@ -1,6 +1,6 @@
 config = {
     'BUILDING': {
-        'VERSION': '1.0.6',
+        'VERSION': '1.0.7',
         'PROJECT': 'newcos-teams',
         'DOCKER_REGISTRY': 'harbor-01.newtech.com.ar',
         'NAME': 'newcos-docs'
